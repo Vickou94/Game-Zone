@@ -1,0 +1,1 @@
+<h1><i class="fas fa-gamepad"></i> <?= $title ?></h1>
