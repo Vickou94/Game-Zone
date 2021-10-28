@@ -9,14 +9,14 @@
             <p>La réalisation de celui-ci a nécéssité l'utilisation des différentes technologies vues lors de la formation (HTML/CSS, Javascript, PHP ainsi que MySQL).</p>
             <p>J'espere que ce projet vous plaira ;)</p>
 
-        </article>
+    </article>
         
         <!--CANVAS-->
-        <article class="snake-game">
-            <h2>Une petite partie rapide ?</h2>
+    <article class="snake-game">
+        <h2>Une petite partie rapide ?</h2>
             
             <h3>Snake !</h3>
             <canvas id="game" width="600" height="600"></canvas>
             <p><button class="refresh" type=button>Recommencer une partie</button><p>
 
-        </article>
+    </article>

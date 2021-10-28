@@ -1,6 +1,6 @@
 <h1><i class="fas fa-sign-in-alt"></i> <?= $title ?></h1>
 
-<form action="#" method="post">
+<form class="authform" action="#" method="post">
 <!-- MESSAGES ERROR FORM -->
 <?php if(!empty($tabMessages)) : ?>
     <div>

@@ -1,22 +1,18 @@
 <?php
 
-namespace App\core;
+
 
 class Session {
     
     
-    public static function setFlashMessage(string $message){
+    public static function setFlashMessage(string $type, string $message){
         
-        $_SESSION['flash-message'] = $message;
+        $_SESSION['flash-message'] = [ $type => $message ];
         
     }
     
 
-    /**
-     * le but c'est d'appeler la fonction dans le form comme çà si jamais le coup d'avant il n'avait pas été validé je récupere mes valeurs 
-     * c'est une fonction qu'on appelera dans chaque input du form 
-     * 
-     */
+
     public static function setInputs(array $fields) :void{
         
         foreach($fields as $key => $value){
@@ -51,10 +47,7 @@ class Session {
         
         unset($_SESSION[$tabSession]);
 
-    }
-    
-    
-    
+    } 
     
     
 }

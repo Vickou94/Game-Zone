@@ -1,12 +1,8 @@
 <?php 
 
 session_start();
-// require 'App/Controller/AppController.php';
-use App\Autoloader;
-use App\Controller\AppController;
+require 'App/Controller/AppController.php';
 
-require_once 'App/Autoloader.php';
-Autoloader::load();
 
 $app = new AppController();
 
@@ -22,8 +18,15 @@ if(array_key_exists('page',$_GET)):
         case 'register':
         case 'about':
         case 'allGames':
+        case 'allArticles':
+        case 'oneArticle':
+        case 'oneComment':
+        case 'deleteCom':
+        case 'editCom':
+        case 'deleteArt':
+        case 'editArt':
         
-            
+        
         break;
         // si jamais je tombe dans un cas ou l'user a modifié index.php?route= alors je vais dans default 
         default : 

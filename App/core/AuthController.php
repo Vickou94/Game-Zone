@@ -1,8 +1,5 @@
 <?php
 
-namespace App\core;
-use App\Autoloader;
-use App\core\Session;
 require_once 'App/core/Session.php';
 
 class AuthController{
@@ -13,12 +10,14 @@ class AuthController{
         
          $this->userClass = $user;
     }
+
+    //GESTION DES ERREURS CREATION DE COMPTE
     
     public function registerForm(array $fields){
         $tabMessages = [];
         
         foreach($fields as $field => $content){
-            if( empty($fields[$field]) ){
+            if(empty($fields[$field]) ){
                 Session::setInputs($_POST);
                 return [ ['Les champs ne sont pas remplis'] ];
             }
@@ -27,24 +26,25 @@ class AuthController{
         if(!filter_var($fields['user_email'], FILTER_VALIDATE_EMAIL))
             $tabMessages[] = ['Ce n\'est pas un mail valide '];
 
+        if(strlen($fields['user_password']) < 4)
+        $tabMessages[] = ['Le mot de passe doit contenir au moins 4 caractères'];
+
         if($fields['user_password'] !== $fields['password_confirm'])
             $tabMessages[] = ['Les mots de passe sont differents'];
             
         if($this->userClass->getOneUser($fields['user_email']) == true)
             $tabMessages[] = ['Un utilisateur existe deja avec cet email'];
         
-        
-        // je rentre dans le if si j'ai au moins une erreur 
+         
         if($tabMessages){
             Session::setInputs($_POST);
             return $tabMessages;
         };
         
+        //SI PAS D'ERREUR ALORS ON VALIDE LA CREATION AVEC UN FLASHMESSAGE
         
         $this->userClass->addOneUser($_POST);
-        // Session::resetSession('input');
-        alert('Bravo votre compte à été crée');
-        
+        Session::setFlashMessage('success','Félicitations votre compte a bien été créé');
         header('location: index.php?page=login');
         exit();
         
@@ -52,6 +52,7 @@ class AuthController{
         
     }
     
+        //GESTION DES ERREURS A LA CONNEXION
     
     public  function loginForm(array $fields){
         $tabMessages     = [];  
@@ -71,9 +72,9 @@ class AuthController{
         if (password_verify($fields['user_password'], $user['user_password']) == false)
             return [ ['Mot de passe incorrect'] ];
     
-        // je met toutes les infos dans $_SESSION
+        
         Session::setUser($user);
-        Session::setFlashMessage('Félicitations vous êtes connecté');
+        Session::setFlashMessage('success','Bienvenue ' . ($user['user_email']));
 
         header('location: index.php');
         exit();  

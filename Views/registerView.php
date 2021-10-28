@@ -1,7 +1,7 @@
 <h1><i class="fas fa-address-card"></i> <?= $title ?></h1>
 
 
-        <form method="post" action="#">
+        <form class="authform" method="post" action="#">
             <!-- MESSAGES ERROR FORM -->
             <?php if(!empty($tabMessages)) : ?>
                 <?php foreach($tabMessages as $message) :  ?>
@@ -13,8 +13,7 @@
 
             <!-- BODY FORM -->
             <div>
-                <input  type="text" id="user-lastname" name="user_lastname" placeholder="Nom">
-                
+                <input  type="text" id="user-lastname" name="user_lastname" placeholder="Nom">                
             </div>
             <div>
                 <input type="text" id="user-name" name="user_firstname" placeholder="Prénom">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\core;
+//CONNEXION A LA BDD
 
 class Database{
     

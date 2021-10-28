@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Models;
-use App\Autoloader;
-use App\core\Database;
-require_once 'App/Autoloader.php';
-Autoloader::load();
-// require_once 'App/core/Database.php';
+
+require_once 'App/core/Database.php';
 
 
 class User extends Database {
     
-
+    //ajout d'un utilisateur
     public function addOneUser( array $infoUser) :void {
     
         $password_crypted = password_hash($infoUser['user_password'], PASSWORD_DEFAULT);
@@ -37,11 +33,12 @@ class User extends Database {
 
     }
 
-
+    //récuperer un utilisateur
     public function getOneUser( string $mail) :array {
         
         $sql =  "SELECT 
-                    `user_id`, 
+                    `user_id`,
+                    `is_user_admin`,
                     `user_firstname`, 
                     `user_lastname`, 
                     `user_email`, 
@@ -58,11 +55,12 @@ class User extends Database {
         
     }
 
-    // recupere tout les Users 
+    // recuperer tout les utilisateurs
     function getAllUser() :array {
         
         $sql =  "SELECT 
-                    `user_id`, 
+                    `user_id`,
+                    `is_user_admin`, 
                     `user_firstname`, 
                     `user_lastname`, 
                     `user_email`, 

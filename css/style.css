@@ -1,9 +1,45 @@
-/* CANVAS GAME SNAKE */
+/* VARIABLES*/
+:root {
+	--backColor:#060606;
+	--mainColor:#0099ff;
+    --footerColor:#fff;
+}
 
+/* GLOBAL  */
+
+
+h1, h2 {
+    color:var(--mainColor);
+    background-color:var(--backColor);
+    text-align:center;
+    font-family: 'Shadows Into Light', cursive;
+    padding: 2rem;
+    margin-top: 0;
+    margin-bottom: auto;
+}
+
+h1 i {
+    margin-right:1rem;
+}
+
+.auth-error {
+    color:red;
+    background-color: var(--backColor);
+    border-radius: 2rem;
+    padding:1rem;
+}
+
+
+/* *****************************************************************
+MOBILE SCREEN
+***************************************************************** */
+
+/* CANVAS GAME SNAKE */
 canvas {
-    box-shadow: 20px 10px 50px #0099ff;
+    box-shadow: 20px 10px 50px var(--mainColor);
     margin:2rem;
     margin-bottom:1rem;
+    width:40%;
     
 }
 
@@ -11,13 +47,14 @@ canvas {
     margin-top: -1.5rem;
     margin-bottom:2rem;
     padding-top: 20px;
-    font-size:7rem;
+    font-size:3rem;
     font-family: 'Rampart One', cursive;
 }
 
 .snake-game p {
     margin-bottom:-1rem;
 }
+
 
 .snake-game {
     text-align:center;
@@ -26,44 +63,32 @@ canvas {
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 90%;
+    margin-bottom:-2rem;
 }
 
 .refresh {
     font-family: 'Rampart One', cursive;
-    font-size:2rem;
+    font-size:1rem;
     margin-bottom:2rem;
+    background-color:var(--mainColor);
+    color:var(--footerColor);
+    border:none;
+    border-radius:2rem;
+    padding:1rem 2rem;
 }
 
-/* GLOBAL  */
 
-h1, h2 {
-    color:#0099ffa8;
-    background-color: black;
-    text-align:center;
-    font-family: 'Shadows Into Light', cursive;
-    padding: 2rem;
-    margin-top: 0;
-}
-
-.auth-error {
-    color:red;
-    background-color: black;
-    border-radius: 2rem;
-    padding:1rem;
-}
 
 
 /***HEADER***/
 
 header {
-    background-color: #060606;
+    background-color: var(--backColor);
 }
 
 .banner {
     text-align:center;
     background-image: url(../resources/img/gamezone1.jpg);
-
-    background-color: #060606;
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
@@ -72,12 +97,13 @@ header {
 
 
 nav{
-    background-color: #060606;
+    background-color: var(--backColor);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 1rem;
     justify-content: space-evenly;
@@ -92,30 +118,88 @@ nav a {
     font-weight: bold;
     display:block;
     transition:all .5s;
-    color:#0099ff;
+    color:var(--mainColor);
     font-family: 'Rampart One', cursive;
     margin-bottom:1rem;
 }
 
 nav a:hover {
-    color: #ffffff;
-    background-color: #0099ff;
+    color: var(--footerColor);
+    background-color: var(--mainColor);
     font-weight: bold;
     padding:0.5rem;
-    border:0.5px solid #fff;
+    border:0.5px solid var(--footerColor);
     border-radius:2rem;
-    box-shadow: 10px 5px 5px #0099ff;
+    box-shadow: 10px 5px 5px var(--mainColor);
     transform:scale(1.2);
     
 }
 
+/* FLASH MESSAGES */
+
+.alert {
+    border: 2px solid #0b2e13;
+    box-shadow: 10px 5px 5px greenyellow;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2rem;
+    padding: 2px;
+    text-align:center;
+    width: 80%;
+    margin: 5px auto 5px auto;
+    background-color: #caffce;
+    color: #0b2e13;
+}
+
+.flash-msg {
+    background-color:var(--backColor);
+    padding: 1rem;
+}
+
 /***MAIN***/
+
+/* HOME */
+
+.home-pics {
+    width:50%;
+    border:2px solid lightblue;
+    border-radius: 25% 10%;
+    margin: 1rem;
+}
+
+.home-section {
+    text-align:center;
+    background-image: url(../resources/img/bg-home.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-bottom: -32px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size:1rem;
+    color: black;
+}
+
+.home-section a {
+    text-decoration: none;
+    color:#005186;
+}
+
+.home-section article {
+    background-color: rgba(255, 255, 255, 0.5);
+    width:60%;
+    margin:auto;
+    border-radius: 10% / 50%;
+    
+}
+
+.home-section p {
+    padding:1rem;
+    margin: 1rem;
+}
 
 /* ABOUT US */
 
 .about-us {
-    color:#0099ff;
-    background-color:black;
+    color:var(--mainColor);
+    background-color:var(--backColor);
     font-size:2.5rem;
     text-align:center;
     font-family: 'Shadows Into Light', cursive; 
@@ -123,68 +207,320 @@ nav a:hover {
     margin-bottom:0;
 }
 
+/* TOUS LES JEUX */
+
+.card-group {
+    background-color: var(--backColor);
+}
+
+.card {
+    background-image: url(../resources/img/article-back.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.search-games {
+    text-align:center;
+    background-color: var(--backColor);
+}
+
+.last-games-button {
+    font-family: 'Rampart One', cursive;
+    font-size:1rem;
+    margin:2rem;
+    background-color:var(--mainColor);
+    color:var(--footerColor);
+    border:none;
+    border-radius:2rem;
+    padding:1rem;
+}
+
+.search-input {
+    font-family: 'Shadows Into Light', cursive;
+    margin:2rem;
+}
+
+.game-image {
+    width: 50%;
+    border-radius: 3rem;
+    border: var(--mainColor) solid;
+    margin-top:2rem;
+}
+
+.card-image {
+    text-align:center;
+}
+
+.card-description {
+    padding-bottom: 2rem;
+    margin-bottom:0;
+}
+
+.card-title, .card-description, .card-type {
+    color:var(--footerColor);
+    font-family: 'Rampart One', cursive;
+    font-weight: bold;
+}
+
+/* TOUS LES ARTICLES */
+
+.article-form {
+    background-color: var(--backColor);
+}
+
+.article-form fieldset {
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
+    background-color: moccasin;
+    border: solid 4px var(--backColor);
+    border-radius: 10px;
+}
+
+.article-form textarea {
+    margin-bottom: 1rem;
+    width: 95%;
+    height: 100px;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 10px;
+}
+
+.article-form input {
+    margin-bottom: 1rem;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.input-text {
+    border-radius:10px;
+}
+
+.article-form button {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    background-color: var(--mainColor);
+    border: none;
+    border-radius: 2rem;
+    color: var(--footerColor);
+}
+
+.article-form legend {
+    margin: auto;
+    padding: 0 0.2rem;
+    font-size: 1.5rem;
+    background-color: moccasin;
+    border: 4px solid;
+}
+
+
+.article-back {
+    background-image: url(../resources/img/article-back.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding:1rem;
+}
+
+.Allarticles {
+    border:10px solid var(--backColor);
+    border-radius:10px;
+    text-align:center;
+    margin:3rem;
+    background-color: moccasin;
+}
+
+.Allarticles img {
+    width: 80%;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    border: thick double var(--mainColor);
+}
+
+.Allarticles h3{
+    font-family: 'Rampart One', cursive;
+    font-size:1rem;
+    color: var(--mainColor);
+    background-color:var(--backColor);
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 10px 5px 5px;
+    margin: auto;
+    margin-top:10px;
+    width:50%;
+}
+
+.Allarticles p{
+    font-family: 'Lobster', cursive;
+    margin: 2rem 0;
+    padding:1rem;
+    line-height: 2.5rem;
+}
+
+.Allarticles a {
+    display: flex;
+    flex-direction: column;
+    color: var(--mainColor);
+    background-color: var(--backColor);
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    font-family: 'Rampart One';
+}
+
+/* COMMENTAIRES */
+
+.Allcomments {
+    background-color: moccasin;
+    border:solid 4px var(--backColor);
+    border-radius: 10px;
+}
+
+.Allcomments p {
+    margin:1rem;
+}
+
 /* FORM */
 
-form {
+.authform {
     text-align:center;
     font-family: 'Shadows Into Light', cursive;
-    font-size:2em;
+    font-size:1em;
     background-image: url(../resources/img/register.jpg);
     background-size:cover;
     padding:4rem;
+    margin-bottom:-2rem;
     
 
 }
 
-form input {
+.authform input {
     margin:0.5em;
 }
 
-button {
-    background-color: #0099ff;
+.authform button {
+    background-color: var(--mainColor);
     border:none;
     border-radius:2rem;
-    color: white;
-    padding: 15px 32px;
+    color: var(--footerColor);
+    padding: 0.5rem 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     cursor:pointer;
-  }
+}
+
+.comments-form {
+    margin: 3rem;
+}
+
+.comments-form legend {
+    margin:auto;
+    padding:0 0.2rem;
+    font-size: 1.5rem;
+    background-color: moccasin;
+    border:4px solid;
+}
+
+.comments-form input {
+    margin-bottom:1rem;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 10px;
+}
+
+.comments-form textarea {
+    margin-bottom: 1rem;
+    width:95%;
+    height:100px;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 10px;
+}
+
+.comments-form h3 {
+    font-family: 'Rampart One', cursive;
+    background-color: moccasin;
+    width: 90%;
+    text-align: center;
+    margin: 1rem auto;
+    padding:0.3rem;
+    border-radius:10px;
+    border:4px solid;
+}
+
+.comments-form fieldset {
+    font-family: 'Lobster', cursive;
+    font-size:1rem;
+    background-color: moccasin;
+    border:solid 4px var(--backColor);
+    border-radius: 10px;
+}
+
+.comments-form button {
+    font-family: 'Shadows Into Light', cursive;
+    font-size:1.5rem;
+    background-color: var(--mainColor);
+    border:none;
+    border-radius:2rem;
+    color: var(--footerColor);
+}
+
+.comment_buttons {
+    margin:1rem;
+    border-top: 2px dashed black;
+    padding-top: 1rem;
+}
+
+.comment_buttons a {
+    font-family: 'Rampart One', cursive;
+    text-decoration:none;
+    color:var(--mainColor);
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.edit-form {
+    background-image: url(../resources/img/article-back.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 2rem;
+    margin: 0;
+}
+
+.error_comment {
+    color:red;
+}
 
 /***FOOTER***/
+
+
 
 footer {
     text-align:center;
     background-image:url(../resources/img/footer.png);
     background-repeat: no-repeat;
     background-size:cover;
-    height:40rem;
+    padding-bottom:1rem;
     font-family: 'Rampart One', cursive;
 
 }
 
 footer a {
     text-decoration: none;
-    color:#fff;
+    color:var(--footerColor);
 }
 
 footer h3 {
-    color:#fff;
-    font-size:3rem;
-    margin-top: 0;
+    color:var(--footerColor);
+    font-size:2rem;
+    margin-top: -0.2rem;
     padding-top: 1rem;
 }
 
 footer p {
-    color: #fff;
+    color:var(--footerColor);
     font-size:2rem;
 }
 
 footer i {
     font-size:2rem;
-    color:#fff;
+    color:var(--footerColor);
     display:block;
     transition:all .5s;
     margin:0 2rem;
@@ -192,7 +528,130 @@ footer i {
 
 footer i:hover {
     font-size:3rem;
-    color:#0099ff;
+    color:var(--mainColor);
     transform:scale(1.2);
     margin:0 2rem;
+}
+
+.reseaux {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.reseaux a {
+    margin:1rem;
+}
+
+.contact h3 {
+    font-size: 2rem;
+}
+
+.contact a, .contact i {
+    font-size: 1rem;
+    margin:0rem;
+}
+
+
+.service h3 {
+    font-size: 2rem;
+}
+
+.service p, .service i {
+    font-size: 1rem;
+}
+
+
+
+/* *****************************************************************
+TABLETTE ET DESKTOP
+***************************************************************** */
+
+@media screen and (min-width: 820px) {
+
+/* HEADER */
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 1rem;
+        justify-content: space-evenly;
+        align-items: center;
+        text-transform: uppercase;
+        text-decoration:none;
+        margin-bottom: 0;
+    }
+
+
+/* CANVAS */
+    .refresh {
+        font-family: 'Rampart One', cursive;
+        font-size:2rem;
+        margin-bottom:2rem;
+    }
+
+    .snake-game h3 {
+        font-size:5rem;
+    }
+
+
+/* BODY */
+    .authform {
+        text-align:center;
+        font-family: 'Shadows Into Light', cursive;
+        font-size:2em;
+        background-image: url(../resources/img/register.jpg);
+        background-size:cover;
+        padding:4rem;
+            
+    }
+
+    .Allarticles h3 {
+        font-size:2rem;
+    }
+
+    .Allarticles a {
+        display:inline;
+        text-decoration: none;
+        color: var(--mainColor);
+        background-color: var(--backColor);
+        padding: 8px;
+        border-top-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        font-family: 'Rampart One', cursive;
+        font-size: 1rem;
+        margin-left: -1px;
+    }
+
+/* HOME */
+    .home-section {
+        display: flex;
+    }
+
+    .home-section article {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 60%;
+        margin: 2rem;
+        border-radius: 10% / 50%;
+        font-size:1.8rem;
+    }
+
+/* FOOTER */
+    .reseaux {
+        display:block;        
+    }
+    
+    .reseaux a {
+        margin:1rem;
+    }
+    
+    .contact a, .contact i {
+        font-size: 2rem;
+        margin:1rem;
+    }
+    
+    .service p, .service i {
+        font-size: 2rem;
+    }
 }
